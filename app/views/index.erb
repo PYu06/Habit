@@ -1,0 +1,20 @@
+<h1>Welcome to Habit App!</h1>
+
+<div id="habit-container">
+	<% @habits.each do |habit|  %>
+		<h2><%= habit.habit_name %></h2>
+		<ul>
+			<li>daily counter : <%= habit.daily_counter %></li>
+			<li>consecutive counter : <%= habit.consecutive_counter %></li>
+		</ul>
+		<% end %>
+</div>
+
+<form action="/habits" method="post">
+	<input name="habit[habit_name]" placeholder="enter a habit">
+	<input type="submit">
+</form>
+
+<div id="habit-template">
+
+</div>
