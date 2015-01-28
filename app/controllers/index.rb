@@ -19,3 +19,8 @@ put '/habits/:id' do
 	@habit.update_attributes(params[:habit])
 	redirect '/'	
 end
+
+get '/habits/:id/delete' do
+	Habit.find(params[:id]).destroy
+	redirect '/'
+end
