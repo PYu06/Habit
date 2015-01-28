@@ -1,0 +1,5 @@
+<form action="/habits/<%= @habit.id %>" method="post">
+	<input type="hidden" name="_method" value="put">
+	<input name="habit[habit_name]" value="<%= @habit.habit_name %>">
+	<input type="submit" value="Edit">
+</form>
