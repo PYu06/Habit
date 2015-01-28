@@ -24,3 +24,9 @@ get '/habits/:id/delete' do
 	Habit.find(params[:id]).destroy
 	redirect '/'
 end
+
+get '/habits/:id/done' do
+	@habit = Habit.find(params[:id])
+	@habit.update_all_counters
+	redirect '/'
+end

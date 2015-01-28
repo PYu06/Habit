@@ -7,8 +7,9 @@
 			<li>daily counter : <%= habit.daily_counter %></li>
 			<li>consecutive counter : <%= habit.consecutive_counter %></li>
 		</ul>
-		<a href="/habits/<%= habit.id %>/edit">Edit</a>
-		<a href="/habits/<%= habit.id %>/delete">Delete</a>
+		<a href="/habits/<%= habit.id %>/done">done!</a>
+		<a href="/habits/<%= habit.id %>/edit">edit</a>
+		<a href="/habits/<%= habit.id %>/delete">delete</a>
 
 	<% end %>
 </div>
