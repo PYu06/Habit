@@ -4,21 +4,23 @@ class Habit < ActiveRecord::Base
 
 	  
 	def update_all_counters
-		update_daily_counter
-		update_all_time_counter
+		update_total_counter
+		update_consecutive_counter
 	end
 
-	def update_all_time_counter
+	# Need to figure out a better way to set all time to local
+	# AR timestamps are in UTC, says they are local by default
+	def update_consecutive_counter
 		if (Time.now.utc - self.updated_at) < DAY_IN_SECONDS
-			self.daily_counter += 1
+			self.consecutive_counter += 1
 			self.save
 		else
-			self.update(daily_counter: 1)
+			self.update(consecutive_counter: 1)
 		end
 	end
 
-	def update_daily_counter
-		self.consecutive_counter += 1
+	def update_total_counter
+		self.total_counter += 1
 		self.save
 	end
 

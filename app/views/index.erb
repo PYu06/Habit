@@ -4,8 +4,8 @@
 	<% @habits.each do |habit|  %>
 		<h2><%= habit.habit_name %></h2>
 		<ul>
-			<li>daily counter : <%= habit.daily_counter %></li>
 			<li>consecutive counter : <%= habit.consecutive_counter %></li>
+			<li>total counter : <%= habit.total_counter %></li>
 		</ul>
 		<a href="/habits/<%= habit.id %>/done">done!</a>
 		<a href="/habits/<%= habit.id %>/edit">edit</a>
