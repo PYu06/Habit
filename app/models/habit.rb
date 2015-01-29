@@ -1,6 +1,6 @@
 class Habit < ActiveRecord::Base
 	DAY_IN_SECONDS = 86400
-	TEST_TIME = 1
+	TEST_TIME = 0
 
 	  
 	def update_all_counters

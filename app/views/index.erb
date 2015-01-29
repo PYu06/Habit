@@ -1,17 +1,17 @@
-<h1>Welcome to Habit App!</h1>
-
 <div id="habit-container">
-	<% @habits.each do |habit|  %>
-		<h2><%= habit.habit_name %></h2>
-		<ul>
-			<li>consecutive counter : <%= habit.consecutive_counter %></li>
-			<li>total counter : <%= habit.total_counter %></li>
-		</ul>
-		<a href="/habits/<%= habit.id %>/done">done!</a>
-		<a href="/habits/<%= habit.id %>/edit">edit</a>
-		<a href="/habits/<%= habit.id %>/delete">delete</a>
+		<% @habits.each do |habit|  %>
+	<div class="habit-each">
+			<h2><%= habit.habit_name %></h2>
+			<ul>
+				<li>consecutive counter : <%= habit.consecutive_counter %></li>
+				<li>total counter : <%= habit.total_counter %></li>
+			</ul>
+			<a href="/habits/<%= habit.id %>/done">done!</a>
+			<a href="/habits/<%= habit.id %>/edit">edit</a>
+			<a href="/habits/<%= habit.id %>/delete" class="delete">delete</a>
 
-	<% end %>
+	</div>
+		<% end %>
 </div>
 
 
