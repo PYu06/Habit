@@ -4,12 +4,12 @@ get '/' do
 end
 
 post '/habits' do
-	@habit = Habit.create(params[:habit])
-	# if request.xhr?
-	# 	erb :
-	# else
-	# end
-	redirect '/'
+	habit = Habit.create(params[:habit])
+	if request.xhr?
+		erb :'habits/new', locals: {habit: habit}, layout: false
+	else
+		redirect '/'
+	end
 end
 
 get '/habits/:id/edit' do
