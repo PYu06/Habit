@@ -1,6 +1,7 @@
 class Habit < ActiveRecord::Base
 	DAY_IN_SECONDS = 86400
 	TEST_TIME = 0
+	default_scope { order('updated_at DESC') }
 
 	  
 	def update_all_counters

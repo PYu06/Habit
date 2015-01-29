@@ -15,14 +15,18 @@ post '/habits' do
 end
 
 get '/habits/:id/edit' do
-	@habit = Habit.find(params[:id])
-	erb :'habits/edit'
+	habit = Habit.find(params[:id])
 end
 
 put '/habits/:id' do
 	@habit = Habit.find(params[:id])
 	@habit.update_attributes(params[:habit])
 	redirect '/'	
+	if request.xhr? 
+		erb :'habits/edit', locals: {habit: habit}, layout: false
+	else
+		redirect '/'
+	end
 end
 
 get '/habits/:id/delete' do

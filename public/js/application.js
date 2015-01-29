@@ -2,7 +2,14 @@ $(document).ready(function() {
 	$(".delete").click(deleteHabit);
 
 	$("#create-habit").submit(createHabit);
+
+	// TODO: Ajaxify edit
+	// $("#edit").click(editHabit);
 	
+
+	// Changing standard underscore.js template delimiters
+	// Not really needed since _.js has its own delimiters
+	// But i'll leave it for now.
 	_.templateSettings = {
 	interpolate: /\<\@\=(.+?)\@\>/gim,
 	evaluate: /\<\@(.+?)\@\>/gim,
@@ -49,3 +56,13 @@ var createHabit = function(e){
 		);
 	});
 }
+
+// var editHabit = function(e){
+// 	e.preventDefault();
+// 	$target = $(e.target);
+// 	// debugger;
+// 	$.ajax({
+// 		type: "post",
+// 		url: $target.attr('href')
+// 	});
+// }
