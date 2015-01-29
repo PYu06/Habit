@@ -17,7 +17,7 @@ $(document).ready(function() {
 	};
 });
 
-var deleteHabit = function(e){
+function deleteHabit(e){
 	e.preventDefault();
 	url = $(e.target).attr('href');
 	$target = $(e.target);
@@ -31,7 +31,7 @@ var deleteHabit = function(e){
 }
 
 
-var createHabit = function(e){
+function createHabit(e){
 	e.preventDefault();
 	$target = $(e.target);
 
@@ -57,6 +57,9 @@ var createHabit = function(e){
 	});
 }
 
+
+
+// TODO: Ajaxify edit
 // var editHabit = function(e){
 // 	e.preventDefault();
 // 	$target = $(e.target);
@@ -65,4 +68,18 @@ var createHabit = function(e){
 // 		type: "post",
 // 		url: $target.attr('href')
 // 	});
+// }
+
+
+// POTENTIAL: Picture pop up windows
+// var myWindow;
+
+// function openWin() {
+//     myWindow = window.open("", "myWindow", "width=200, height=100");
+//     myWindow.document.write("<p>This is 'myWindow'</p>");
+//     setTimeout(closeWin, 10000);
+// }
+
+// function closeWin() {
+//     myWindow.close();
 // }
