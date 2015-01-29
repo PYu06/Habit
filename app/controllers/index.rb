@@ -4,9 +4,11 @@ get '/' do
 end
 
 post '/habits' do
-	habit = Habit.create(params[:habit])
 	if request.xhr?
-		erb :'habits/new', locals: {habit: habit}, layout: false
+		habit = Habit.create(params[:habit])
+		content_type :json
+		habit.to_json
+		# erb :'habits/new', locals: {habit: habit}, layout: false
 	else
 		redirect '/'
 	end

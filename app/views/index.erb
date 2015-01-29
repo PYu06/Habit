@@ -18,16 +18,15 @@
 
 <%= erb :'habits/new' %>
 
-<!-- <div id="habit-template">
-	<div class="habit-div">
-		<h2>Habit Name</h2>
-			<ul>
-				<li>consecutive counter :</li>
-				<li>total counter : </li>
-			</ul>
-		<a href="/habits/id/done">done!</a>
-		<a href="/habits/id/edit">edit</a>
-		<a href="/habits/id/delete" class="delete">delete</a>
-	</div>
+<script type="text/template" id="habit-template">
+	<h2><@= habit_name @></h2>
+		<ul>
+			<li>consecutive counter : <@= consecutive_counter @></li>
+			<li>total counter : <@= total_counter @></li>
+		</ul>
+	<a href="/habits/<@= id @>/done">done!</a>
+	<a href="/habits/<@= id @>/edit">edit</a>
+	<a href="/habits/<@= id @>/delete" class="delete">delete</a>
+</script>
 
-</div> -->
+<!-- ('<h2>' + response.habit_name + '</h2><ul><li>consecutive counter : '+ response.consecutive_counter + '</li><li>total counter : ' + response.total_counter + '</li></ul><a href="/habits/' + response.id + '/done">done!</a> <a href="/habits/' + response.id + '/edit">edit</a> <a href="/habits/' + response.id + '/delete" class="delete">delete</a>'); -->
