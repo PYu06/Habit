@@ -5,6 +5,10 @@ end
 
 post '/habits' do
 	@habit = Habit.create(params[:habit])
+	# if request.xhr?
+	# 	erb :
+	# else
+	# end
 	redirect '/'
 end
 
