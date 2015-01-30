@@ -38,10 +38,14 @@ delete '/habits/:id/delete' do
 	Habit.find(params[:id]).destroy
 end
 
-get '/habits/:id/done' do
+post '/habits/:id/done' do
 	@habit = Habit.find(params[:id])
 	@habit.update_all_counters
-	redirect '/'
+	content_type :json
+	@habit.to_json
+
+	# redirect '/'
+	# {img: }
 end
 
 get '/quote' do

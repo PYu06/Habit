@@ -3,6 +3,8 @@ $(document).ready(function() {
 
 	$("#create-habit").submit(createHabit);
 
+	$("#done").click(completeHabit);
+
 	// TODO: Ajaxify edit
 	// $("#edit").click(editHabit);
 	
@@ -54,6 +56,26 @@ function createHabit(e){
 																	  id: response.id	
 																	} )
 		);
+	});
+}
+
+function completeHabit(e){
+	e.preventDefault();
+	$target = $(e.target);
+
+		
+	$consecutive_counter = $target.closest(".habit-each").find("li span.consecutive-counter")
+	$total_counter = $target.closest(".habit-each").find("li span.total-counter")
+
+	$.ajax({
+		url: $(e.target).attr('href'),
+		type: "post"
+	}).done(function(response){
+		debugger;
+		$consecutive_counter.html(response.consecutive_counter);
+		$total_counter.html(response.total_counter);
+
+		
 	});
 }
 

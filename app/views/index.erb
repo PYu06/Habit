@@ -3,10 +3,10 @@
 	<div class="habit-each">
 			<h2><%= habit.habit_name %></h2>
 			<ul>
-				<li>consecutive counter : <%= habit.consecutive_counter %></li>
-				<li>total counter : <%= habit.total_counter %></li>
+				<li>consecutive counter : <span class="consecutive-counter"><%= habit.consecutive_counter %></span></li>
+				<li>total counter : <span class="total-counter"><%= habit.total_counter %></span></li>
 			</ul>
-			<a href="/habits/<%= habit.id %>/done">done!</a>
+			<a href="/habits/<%= habit.id %>/done" id="done">done!</a>
 			<a href="/habits/<%= habit.id %>/edit" id="edit">edit</a>
 			<a href="/habits/<%= habit.id %>/delete" class="delete">delete</a>
 
@@ -23,8 +23,8 @@
 <script type="text/template" id="habit-template">
 	<h2><@= habit_name @></h2>
 		<ul>
-			<li>consecutive counter : <@= consecutive_counter @></li>
-			<li>total counter : <@= total_counter @></li>
+			<li>consecutive counter : <span class="consecutive-counter"><@= consecutive_counter @></span></li>
+			<li>total counter : <span class="total-counter"><@= total_counter @></span></li>
 		</ul>
 	<a href="/habits/<@= id @>/done">done!</a>
 	<a href="/habits/<@= id @>/edit">edit</a>
