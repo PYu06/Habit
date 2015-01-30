@@ -3,9 +3,13 @@
 </div>
 
 <div id="habit-container">
+	<div>
+		<h1>Your Habits</h1>
+	</div>
+		<hr>
 		<% @habits.each do |habit|  %>
 	<div class="habit-each">
-			<h2><%= habit.habit_name %></h2>
+			<h2 class="habit-name"><%= habit.habit_name %></h2>
 			<ul>
 				<li>consecutive counter : <span class="counter consecutive-counter"><%= habit.consecutive_counter %></span></li>
 				<li>total counter : <span class="counter total-counter"><%= habit.total_counter %></span></li>
