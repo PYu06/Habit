@@ -1,5 +1,8 @@
 get '/' do
 	@habits = Habit.all
+	response = HTTParty.post("http://api.icndb.com/jokes/random")
+	# byebug
+	@joke = response["value"]["joke"]
 	erb :index
 end
 
@@ -48,13 +51,7 @@ end
 
 get '/quote' do
 	response = HTTParty.post("http://api.icndb.com/jokes/random")
-	# one = JSON.parse(response.body)
-	# p response.quoteText
-	# p one["value"]["joke"]
 	response.to_json
-	# ["value"]["joke"]
-
-
 end
 
 # # meh, dunno if want to use

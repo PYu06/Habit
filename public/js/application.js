@@ -25,6 +25,7 @@ $(document).ready(function() {
 
 function deleteHabit(e){
 	e.preventDefault();
+	debugger;
 	url = $(e.target).attr('href');
 	$target = $(e.target);
 
@@ -76,25 +77,11 @@ function createHabit(e){
 }
 
 function createHabitPic(e){
-	// e.preventDefault();
-	// debugger;
+
 		var img = $("<img />").attr('src', selectCreatePic()).load(function(){
 		$("#picture-container").html(img);
 	});
 
-	// $target = $(e.target);
-
-	// $.ajax({
-
-	// }).done(function(response){
-		// var picTemplate = document.getElementById("pic-template")
-		// var content = picTemplate.innerHTML;
-	// 	var picDiv = document.createElement('div');
-
-	// 	var templateFunction = _.template(content)
-	// 	debugger;
-	// 	$("#picture-container").html(templateFunction({ }))
-	// });
 
 }
 
@@ -111,7 +98,7 @@ function completeHabitPic(e){
 }
 
 function selectCompletePic() {
-  var values = ["fixtures/imgs/ryan_sucesss.jpg","fixtures/imgs/emma_success.jpg"],
+  var values = ["fixtures/imgs/ryan_success.jpg","fixtures/imgs/emma_success.jpg"],
     valueToUse = values[Math.floor(Math.random() * values.length)];
   return valueToUse  
 }
