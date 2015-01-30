@@ -78,7 +78,7 @@ function createHabit(e){
 function createHabitPic(e){
 	// e.preventDefault();
 	// debugger;
-		var img = $("<img />").attr('src', "fixtures/imgs/emma_challenge.jpg").load(function(){
+		var img = $("<img />").attr('src', selectCreatePic()).load(function(){
 		$("#picture-container").html(img);
 	});
 
@@ -98,8 +98,14 @@ function createHabitPic(e){
 
 }
 
+function selectCreatePic() {
+  var values = ["fixtures/imgs/ryan_challenge.jpg","fixtures/imgs/emma_challenge.jpg"],
+    valueToUse = values[Math.floor(Math.random() * values.length)];
+  return valueToUse  
+}
+
 function completeHabitPic(e){
-		var img = $("<img />").attr('src', "fixtures/imgs/ryan_success.jpg").load(function(){
+		var img = $("<img />").attr('src', selectCompletePic()).load(function(){
 		$("#picture-container").html(img);
 	});
 }
@@ -107,7 +113,6 @@ function completeHabitPic(e){
 function selectCompletePic() {
   var values = ["fixtures/imgs/ryan_sucesss.jpg","fixtures/imgs/emma_success.jpg"],
     valueToUse = values[Math.floor(Math.random() * values.length)];
-    // do something with the selected value
   return valueToUse  
 }
 
@@ -121,7 +126,6 @@ function deleteHabitPic(e){
 function selectDeletePic() {
   var values = ["fixtures/imgs/ryan_disappoint.jpg","fixtures/imgs/emma_disappoint.jpg"],
     valueToUse = values[Math.floor(Math.random() * values.length)];
-    // do something with the selected value
   return valueToUse  
 }
 
