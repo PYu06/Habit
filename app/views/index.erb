@@ -20,7 +20,7 @@
 	<%= erb :pictures %>
 </div>
 
-<script type="text/template" id="habit-template">
+<script type="text/template" class="hide">
 	<h2><@= habit_name @></h2>
 		<ul>
 			<li>consecutive counter : <span class="consecutive-counter"><@= consecutive_counter @></span></li>
@@ -31,4 +31,3 @@
 	<a href="/habits/<@= id @>/delete" class="delete">delete</a>
 </script>
 
-<!-- ('<h2>' + response.habit_name + '</h2><ul><li>consecutive counter : '+ response.consecutive_counter + '</li><li>total counter : ' + response.total_counter + '</li></ul><a href="/habits/' + response.id + '/done">done!</a> <a href="/habits/' + response.id + '/edit">edit</a> <a href="/habits/' + response.id + '/delete" class="delete">delete</a>'); -->
