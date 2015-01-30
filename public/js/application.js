@@ -9,9 +9,10 @@ $(document).ready(function() {
 
 
 	// TODO: Ajaxify edit
+	// ----------------------------------
 	// $("#edit").click(editHabit);
 	
-
+	// ----------------------------------
 	// Changing standard underscore.js template delimiters
 	// Not really needed since _.js has its own delimiters
 	// But i'll leave it for now.
@@ -27,11 +28,13 @@ function deleteHabit(e){
 	url = $(e.target).attr('href');
 	$target = $(e.target);
 
+
 	$.ajax({
 		url: url,
 		type: 'delete'
 	}).done(function(response){
 		$target.closest('.habit-each').remove();
+		deleteHabitPic();
 	})
 }
 
@@ -60,7 +63,15 @@ function createHabit(e){
 									  							  total_counter: response.total_counter,
 																	  id: response.id	
 																	} )
-		);
+		)
+
+		// Doesn't Work
+		// ----------------------------------
+		// var picTemplate = document.getElementById("pic-template")
+		// var picContent = picTemplate.innerHTML;
+
+		// var templatePic = _.template(picContent);
+		// $('#picture-container')
 	});
 }
 
@@ -76,8 +87,8 @@ function createHabitPic(e){
 	// $.ajax({
 
 	// }).done(function(response){
-	// 	var picTemplate = document.getElementById("pic-template")
-	// 	var content = picTemplate.innerHTML;
+		// var picTemplate = document.getElementById("pic-template")
+		// var content = picTemplate.innerHTML;
 	// 	var picDiv = document.createElement('div');
 
 	// 	var templateFunction = _.template(content)
@@ -87,10 +98,39 @@ function createHabitPic(e){
 
 }
 
+function completeHabitPic(e){
+		var img = $("<img />").attr('src', "fixtures/imgs/ryan_success.jpg").load(function(){
+		$("#picture-container").html(img);
+	});
+}
+
+function selectCompletePic() {
+  var values = ["fixtures/imgs/ryan_sucesss.jpg","fixtures/imgs/emma_success.jpg"],
+    valueToUse = values[Math.floor(Math.random() * values.length)];
+    // do something with the selected value
+  return valueToUse  
+}
+
+function deleteHabitPic(e){
+
+		var img = $("<img />").attr('src', selectDeletePic()).load(function(){
+		$("#picture-container").html(img);
+	});
+}
+
+function selectDeletePic() {
+  var values = ["fixtures/imgs/ryan_disappoint.jpg","fixtures/imgs/emma_disappoint.jpg"],
+    valueToUse = values[Math.floor(Math.random() * values.length)];
+    // do something with the selected value
+  return valueToUse  
+}
+
+
 // When I create a new habit, 
 // w/o refreshing I can't click done. Why?
 function completeHabit(e){
 	e.preventDefault();
+	completeHabitPic();
 	$target = $(e.target);
 	$consecutive_counter = $target.closest(".habit-each").find("li span.consecutive-counter");
 	$total_counter = $target.closest(".habit-each").find("li span.total-counter");
@@ -109,6 +149,7 @@ function completeHabit(e){
 
 
 // TODO: Ajaxify edit
+// ----------------------------------
 // var editHabit = function(e){
 // 	e.preventDefault();
 // 	$target = $(e.target);
@@ -121,6 +162,7 @@ function completeHabit(e){
 
 
 // POTENTIAL: Picture pop up windows
+// ----------------------------------
 // var myWindow;
 
 // function openWin() {
@@ -135,6 +177,7 @@ function completeHabit(e){
 
 
 // Append Picture
+// ----------------------------------
 // var img = $("<img />").attr('src', "fixtures/imgs/emma_challenge.jpg").load(function(){
 // 	$("#picture").innerHTML(img);
 // });
