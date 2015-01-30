@@ -59,11 +59,11 @@ function createHabit(e){
 	});
 }
 
+// When I create a new habit, 
+// w/o refreshing I can't click done. Why?
 function completeHabit(e){
 	e.preventDefault();
 	$target = $(e.target);
-
-		
 	$consecutive_counter = $target.closest(".habit-each").find("li span.consecutive-counter");
 	$total_counter = $target.closest(".habit-each").find("li span.total-counter");
 
@@ -73,8 +73,6 @@ function completeHabit(e){
 	}).done(function(response){
 		$consecutive_counter.html(response.consecutive_counter);
 		$total_counter.html(response.total_counter);
-
-		
 	});
 }
 
