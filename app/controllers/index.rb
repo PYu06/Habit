@@ -43,9 +43,6 @@ post '/habits/:id/done' do
 	@habit.update_all_counters
 	content_type :json
 	@habit.to_json
-
-	# redirect '/'
-	# {img: }
 end
 
 get '/quote' do
