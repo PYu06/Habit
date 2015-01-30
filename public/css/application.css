@@ -1,19 +1,16 @@
-/*#habit-template {
-	display: none;
-}*/
-.header, .habit-name, hr, #habit-container, .habit-each {
+.header, .habit-name, hr, #habit-container, .habit-each, #picture-container, .habit-create {
 	text-align: center;
-	/*width: 70%;*/
 }	
+
+li {
+ list-style-type: none;
+
+}
 
 
 html {
 	background-color: black;
 	color: gray;
-}
-
-body {
-	/*width: 100%;*/
 }
 
 .hide {
@@ -23,7 +20,6 @@ body {
 
 .header {
 	background-image: url('../fixtures/imgs/xzibit.jpg');
-/*	background-size: 100%;*/
 	height: 300px;
 	width: 100%;
 	z-index = -1;
@@ -31,36 +27,24 @@ body {
   background-size:contain;
   color: #c6c6c6;
   background-position: center; 
-  /*height:692px;*/
-  /*width:250px;*/
-   /*top: 50%;*/
 	display: block;
-	/*text-align: center;*/
-	/*position: absolute;*/
-	
-
-/*  padding-top: auto;*/
 }
 
 .tupac {
 	text-align: center;
-	/*margin-right: 50%;
-	margin-left: 50%;*/
 }
 #header-bottom {
 	padding-top: 200px;
 }
 
 .red-dog, .counter {
-	/*color: #B20000;*/
 	color: rgba(200,23,52,0.5);
 }
 
-/*.counter {
-	color: #7E2525;
-}*/
 
-.habit-name {
+.habit-name, .habit-create {
 	color: #c6c6c6 ;
 }
+
+
 

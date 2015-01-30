@@ -4,7 +4,8 @@
 
 <div id="habit-container">
 	<div>
-		<h1>Your Habits</h1>
+		<h1>Your Budding Habits</h1>
+		<p id="quote"></p>
 	</div>
 		<hr>
 		<% @habits.each do |habit|  %>
@@ -22,7 +23,11 @@
 		<% end %>
 </div>
 
-<%= erb :'habits/new' %>
+<hr>
+
+<div class="habit-create">
+	<%= erb :'habits/new' %>
+</div>
 
 
 <script type="text/template" id="habit-template" class="hide">
