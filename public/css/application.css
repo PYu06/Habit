@@ -1,6 +1,10 @@
 /*#habit-template {
 	display: none;
 }*/
+html {
+	background-color: black;
+	color: gray;
+}
 
 .hide {
 	display: none;
@@ -15,8 +19,21 @@
 	z-index = -1;
   background-repeat: no-repeat;
   background-size:contain;
+  color: white;
   /*height:692px;
   width:250px;*/
 
 /*  padding-top: auto;*/
+}
+
+#header-bottom {
+	padding-top: 200px;
+}
+
+.red-dog {
+	color: red;
+}
+
+.counter {
+	color: red;
 }

@@ -7,8 +7,8 @@
 	<div class="habit-each">
 			<h2><%= habit.habit_name %></h2>
 			<ul>
-				<li>consecutive counter : <span class="consecutive-counter"><%= habit.consecutive_counter %></span></li>
-				<li>total counter : <span class="total-counter"><%= habit.total_counter %></span></li>
+				<li>consecutive counter : <span class="counter consecutive-counter"><%= habit.consecutive_counter %></span></li>
+				<li>total counter : <span class="counter total-counter"><%= habit.total_counter %></span></li>
 			</ul>
 			<a href="/habits/<%= habit.id %>/done" id="done">done!</a>
 			<a href="/habits/<%= habit.id %>/edit" id="edit">edit</a>
