@@ -5,6 +5,8 @@ $(document).ready(function() {
 
 	$("#habit-container").on("click", "#done", completeHabit);
 
+	// $("#create-habit").submit(createHabitPic);
+
 
 	// TODO: Ajaxify edit
 	// $("#edit").click(editHabit);
@@ -49,6 +51,8 @@ function createHabit(e){
 		habit.className = "habit-each"
 		habit.id = response.id
 	
+		createHabitPic();
+
     var templateFunction = _.template(content);
 
 		$('#habit-container').prepend(templateFunction( { habit_name: response.habit_name,
@@ -58,6 +62,29 @@ function createHabit(e){
 																	} )
 		);
 	});
+}
+
+function createHabitPic(e){
+	// e.preventDefault();
+	// debugger;
+		var img = $("<img />").attr('src', "fixtures/imgs/emma_challenge.jpg").load(function(){
+		$("#picture-container").html(img);
+	});
+
+	// $target = $(e.target);
+
+	// $.ajax({
+
+	// }).done(function(response){
+	// 	var picTemplate = document.getElementById("pic-template")
+	// 	var content = picTemplate.innerHTML;
+	// 	var picDiv = document.createElement('div');
+
+	// 	var templateFunction = _.template(content)
+	// 	debugger;
+	// 	$("#picture-container").html(templateFunction({ }))
+	// });
+
 }
 
 // When I create a new habit, 
@@ -105,11 +132,9 @@ function completeHabit(e){
 // function closeWin() {
 //     myWindow.close();
 // }
-var img = $("<img />").attr('src', "fixtures/imgs/emma_challenge.jpg").load(function(){
-	$("#picture").innerHTML(img);
-})
-// $.ajax({
-// 	url: "fixtures/imgs/emma_challenge.jpg"
-// }).done(function(data){
-// 	$("body").innerHTML(data)
+
+
+// Append Picture
+// var img = $("<img />").attr('src', "fixtures/imgs/emma_challenge.jpg").load(function(){
+// 	$("#picture").innerHTML(img);
 // });

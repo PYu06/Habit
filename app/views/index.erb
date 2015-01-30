@@ -1,3 +1,7 @@
+<div id="picture-container">
+
+</div>
+
 <div id="habit-container">
 		<% @habits.each do |habit|  %>
 	<div class="habit-each">
@@ -16,10 +20,6 @@
 
 <%= erb :'habits/new' %>
 
-<div id="picture">
-	
-</div>
-
 
 <script type="text/template" id="habit-template" class="hide">
 	<h2><@= habit_name @></h2>
@@ -32,3 +32,9 @@
 	<a href="/habits/<@= id @>/delete" class="delete">delete</a>
 </script>
 
+<!-- script for creating a habit -->
+<script type="text/template" id="pic-template" class="hide">
+	<h5>Hey Dawg,</h5>
+	
+	<h5>Good job deciding to <@= habit_name @></h5>	
+</script>
