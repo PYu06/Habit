@@ -5,6 +5,7 @@ $(document).ready(function() {
 
 	$("#habit-container").on("click", "#done", completeHabit);
 
+
 	// TODO: Ajaxify edit
 	// $("#edit").click(editHabit);
 	
@@ -78,6 +79,8 @@ function completeHabit(e){
 
 
 
+
+
 // TODO: Ajaxify edit
 // var editHabit = function(e){
 // 	e.preventDefault();
@@ -102,3 +105,11 @@ function completeHabit(e){
 // function closeWin() {
 //     myWindow.close();
 // }
+var img = $("<img />").attr('src', "fixtures/imgs/emma_challenge.jpg").load(function(){
+	$("#picture").innerHTML(img);
+})
+// $.ajax({
+// 	url: "fixtures/imgs/emma_challenge.jpg"
+// }).done(function(data){
+// 	$("body").innerHTML(data)
+// });
